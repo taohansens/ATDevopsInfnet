@@ -1,0 +1,15 @@
+services:
+  eureka-server:
+    build: .
+    image: taohans/devops:devops_eureka
+    container_name: devops_eureka
+    environment:
+      - SERVER_PORT=8761
+    ports:
+      - "8761:8761"
+    networks:
+      - devops-private
+
+networks:
+  devops-private:
+    external: true
