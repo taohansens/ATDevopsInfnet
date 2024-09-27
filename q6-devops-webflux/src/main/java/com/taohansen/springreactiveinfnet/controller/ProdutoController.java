@@ -23,6 +23,11 @@ public class ProdutoController {
         return produtoService.save(produto).map(ResponseEntity::ok);
     }
 
+    @GetMapping("/{id}")
+    public Mono<ResponseEntity<Produto>> get(@PathVariable Long id) {
+        return produtoService.findById(id).map(ResponseEntity::ok);
+    }
+
     @DeleteMapping
     public Mono<Void> delete(@RequestParam Long id) {
         return produtoService.deleteById(id);
