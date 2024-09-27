@@ -1,0 +1,15 @@
+services:
+  devops-stock:
+    build: q8
+    image: taohans/devops:devops_stock
+    container_name: devops_stock
+    environment:
+      - SERVER_PORT=9999
+    ports:
+      - "8787:9999"
+    networks:
+      - devops-private
+
+networks:
+  devops-private:
+    external: true
