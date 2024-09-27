@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: stockmarket-q5
+  labels:
+    app: stockmarket-q5
+spec:
+  replicas: 4
+  selector:
+    matchLabels:
+      app: stockmarket-q5
+  template:
+    metadata:
+      name: stockmarket-q5
+      labels:
+        app: stockmarket-q5
+    spec:
+      containers:
+        - name: stockmarket-q5
+          image: taohans/devops:devops_stock
+          ports:
+            - containerPort: 8085
+      restartPolicy: Always

@@ -1,6 +1,6 @@
 services:
   devops-stock:
-    build: q8
+    build: .
     image: taohans/devops:devops_stock
     container_name: devops_stock
     environment:
