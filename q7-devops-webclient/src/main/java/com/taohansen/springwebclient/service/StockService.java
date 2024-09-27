@@ -12,11 +12,8 @@ import reactor.core.publisher.Mono;
 public class StockService {
     private final WebClient.Builder webClientBuilder;
 
-    @Value("${api-token}")
-    private String token;
-
     public Mono<Result> getStockMarket(String acao) {
-        String baseUrl = "https://brapi.dev/api/quote/" + acao + "?token=" + token;
+        String baseUrl = "https://brapi.dev/api/quote/" + acao + "?token=" + "xz6PFvnzNN9VPsUkJkcGTt";
         WebClient webClient = webClientBuilder.baseUrl(baseUrl).build();
         return webClient.get()
                 .retrieve()
